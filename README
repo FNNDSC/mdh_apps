@@ -1,0 +1,38 @@
+Various apps for handling/processing Siemens formatted raw scanner
+files.
+
+The 'mdh' denotes the Siemens 'Medical Data Header'.
+
+NOTE:
+To compile, you will need the following includes from Siemens, specifically
+the IDEA environment:
+
+o mdh64.h
+o SeqDefines.h
+
+These are NOT distrubuted in this repo. Add where necessary to the 
+'includelib' dir of each app.
+
+OTHER DEPENDENCIES:
+
+o GNU Scientific Library:
+
+	sudo apt-get install libgsl0-dev
+
+o Little Template Library:
+
+Also, for 'mdh_process' you will also need the 'Little Template Library',
+ltl, available here:
+
+	http://www.mpe.mpg.de/~drory/ltl/index.html
+
+(If you do a default configure / make / sudo make install, you might need
+to also do
+
+	sudo chmod 775 /usr/local/include/ltl
+	cd /usr/local/include/ltl
+	sudo find . -type d -exec chmod o+r,o+x {} \;
+
+after installation of ltl)
+
+
